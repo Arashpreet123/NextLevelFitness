@@ -1,0 +1,25 @@
+body {
+    background-color: #1a1a1a; /* Dark Gray */
+    color: white;
+}
+
+.navbar {
+    background-color: #303438 !important;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.hero-section {
+    background: url('../images/gym-hero.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.img-blend {
+    filter: brightness(0.7)
+}
