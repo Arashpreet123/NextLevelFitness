@@ -2,16 +2,38 @@
 
 {% load static %}
 
-
 {% block title %}
   About - Next Level Fitness
 {% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h1>About Us</h1>
+  <div class="container text-center">
+    <h1 class="text-center mb-4">About Us</h1>
     <p>Welcome to Next Level Fitness! We are dedicated to helping you achieve your fitness goals.</p>
-    <h4>Meet Our Team</h4>
-    <!-- <img src="{% static 'images/base_image.jpg' %}" alt="Our Team" class="img-fluid"> -->
+    <p>At Next Level Fitness, we’re more than just a gym—we’re a community dedicated to pushing limits and achieving results. Whether you’re a beginner or a seasoned athlete, our state-of-the-art equipment, expert trainers, and dynamic group classes are designed to help you unlock your full potential. With a focus on personalized fitness, cutting-edge training programs, and a supportive atmosphere, we’re here to take your fitness journey to the next level!</p>    <h4 class="text-center mt-4">Meet Our Team</h4>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-4">
+        <div class="card bg-dark text-white h-100">  <!-- Ensure equal height -->
+          <img src="{% static 'images/coach_adam.jpg' %}" alt="Coach Adam" class="card-img-top rounded img-blend" style="height: 250px; object-fit: cover;">
+          <div class="card-body d-flex flex-column text-center">  <!-- Flexbox for equal spacing -->
+            <h5 class="card-title">Adam Foster</h5>
+            <p class="card-text">Strength & Performance Specialist</p>
+            <p class="card-text">With 10+ years of experience, Adam helps clients build strength, lose weight, and improve performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-dark text-white h-100">  <!-- Ensure equal height -->
+          <img src="{% static 'images/coach_john.jpg' %}" alt="Coach John" class="card-img-top rounded img-blend" style="height: 250px; object-fit: cover;">
+          <div class="card-body d-flex flex-column text-center">  <!-- Flexbox for equal spacing -->
+            <h5 class="card-title">John Lester</h5>
+            <p class="card-text">Certified Personal Trainer</p>
+            <p class="card-text">John specializes in functional training and injury prevention, helping clients stay strong and mobile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}

@@ -12,9 +12,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100"> <!-- Ensures full height -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Next Level Fitness</a>
+        <a class="navbar-brand" href="#"><img src="{% static 'images/nlf_logo.jpg' %}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,11 +23,14 @@
             <ul class="navbar-nav">
                 <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'class_schedule' %}">class Schedule</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">{% block content %} {% endblock %}</div>
+    <!-- Main content wrapper -->
+    <div class="container flex-grow-1">{% block content %} {% endblock %}</div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-5">

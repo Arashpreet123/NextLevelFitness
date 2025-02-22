@@ -8,46 +8,69 @@
 
 {% block content %}
   <div class="container text-center">
-    <h1>Welcome To Next Level Fitness</h1>
-    <p>Welcome to Next Level Fitness! We are dedicated to helping you achieve your fitness goals.</p>
-    
-    <img src="{% static 'images/base_image.jpg' %}" alt="Our Team" class="img-fluid img-blend">
+    <h2>Welcome To Next Level Fitness</h1>
+    <p>Elevate Your Fitness Level at NLF</p>
+    <!-- <img src="{% static 'images/base_image.jpg' %}" alt="Our Team" class="img-fluid img-blend"> -->
 
-    <button class="mt-4 mb-4 btn btn-primary">Try a Free Class</button>
-
-    <div class="row bg-dark rounded g-3 py-4">
-        <div class="col">
-            <div class="card bg-dark text-white border-0 p-3"><h3>Basic Plan</h3></div>
-            <h5>Price: $25/month </h5>
-            <h5>Access to: </h5>
-            <ul>
-                <li>Gym Equipment</li>
-                <li>Locker rooms & showers</li>
-                <li>Open gym hours</li>
-                <li>One free guest pass per month</li>
-            </ul>
-        </div>
-        <div class="col">
-            <div class="card bg-dark text-white border-0 p-3"><h3>Standard Plan</h3></div>
-            <h5>Price: $35/month </h5>
-            <h5>Access to: </h5>
-            <ul>
-                <li>Access to all group fitness classes (Yoga, HIIT, Zumba, etc.)</li>
-                <li>Discounted personal training session</li>
-                <li>2 guest passes per month</li>
-            </ul>
-        </div>
-        <div class="col">
-            <div class="card bg-dark text-white border-0 p-3"><h3>Premium Plan</h3></div>
-            <h5>Price: $50/month </h5>
-            <h5>Access to: </h5>
-            <ul>
-                <li>Unlimited personal training sessions</li>
-                <li>Nutrition consultation                </li>
-                <li>Exclusive fitness events & workshops</li>
-                <li>Unlimited guest passes</li>
-            </ul>
+    <a class="mt-4 mb-4 btn btn-primary" href="{% url 'class_schedule' %}">Try a Free Class</a>
+    <div class="aboutSection">
+        <h3>About Us</h3>
+        <p>
+            At Next Level Fitness, we’re more than just a gym—we’re a community dedicated to 
+            pushing limits and achieving goals. Whether you're a beginner or a seasoned athlete, our expert trainers, top-tier equipment,
+            and dynamic classes will help you take your fitness to the next level.
+            Join us today and start your journey toward a stronger, healthier you!
+        </p>
+        <div class="bg-info">
+            <h3>Amentites At Next Level Fitness</h3>
+            <p>All the great equipment you need for any workout, as well as: </p>
+            {% for image in images %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{image.image.url}}" alt="">
+            </div>
+            {% endfor %}
         </div>
     </div>
+    <div class="row rounded g-4 justify-content-center mt-4">
+        <div class="col-md-4">
+            <div class="card bg-dark text-white border-0 h-100 p-3">
+                <h3>Basic Plan</h3>
+                <h5>Price: $25/month </h5>
+                <h5>Access to:</h5>
+                <ul>
+                    <li>Gym Equipment</li>
+                    <li>Locker rooms & showers</li>
+                    <li>Open gym hours</li>
+                    <li>One free guest pass per month</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white border-0 h-100 p-3">
+                <h3>Standard Plan</h3>
+                <h5>Price: $35/month </h5>
+                <h5>Access to:</h5>
+                <ul>
+                    <li>Access to all group fitness classes (Yoga, HIIT, Zumba, etc.)</li>
+                    <li>Discounted personal training session</li>
+                    <li>2 guest passes per month</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white border-0 h-100 p-3">
+                <h3>Premium Plan</h3>
+                <h5>Price: $50/month </h5>
+                <h5>Access to:</h5>
+                <ul>
+                    <li>Unlimited personal training sessions</li>
+                    <li>Nutrition consultation</li>
+                    <li>Exclusive fitness events & workshops</li>
+                    <li>Unlimited guest passes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
   </div>
 {% endblock %}
