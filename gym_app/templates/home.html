@@ -21,14 +21,16 @@
             and dynamic classes will help you take your fitness to the next level.
             Join us today and start your journey toward a stronger, healthier you!
         </p>
-        <div class="bg-info">
+        <div class="bg-dark p-4">
             <h3>Amentites At Next Level Fitness</h3>
             <p>All the great equipment you need for any workout, as well as: </p>
-            {% for image in images %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <img src="{{image.image.url}}" alt="">
+            <div class="row d-flex flex-row flex-wrap">
+                {% for image in images %}
+                    <div class="col">
+                        <img src="{{ image.image.url }}" class="img-fluid rounded shadow" alt="{{ image.alt_text }}">
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
     <div class="row rounded g-4 justify-content-center mt-4">

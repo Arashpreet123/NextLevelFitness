@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import CarouselImage
 
 # Create your views here.
 
 def home(request):
     template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+    images = CarouselImage.objects.all()
+    return render(request, 'home.html', {'images' : images})
 
 
 def about(request):
