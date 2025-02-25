@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gym_website_db',
         'USER': 'gym_user',
-        'PASSWORD': 'password123',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',  # or 'localhost'
         'PORT': '3301',  # Change port to 3301
     }
